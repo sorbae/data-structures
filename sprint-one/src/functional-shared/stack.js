@@ -5,7 +5,7 @@ var Stack = function() {
   newStack.storage = {};
   newStack.count = 0;
   
-  extend(newStack, stackMethods);
+  _.extend(newStack, stackMethods);
   
   return newStack;
 };
@@ -13,11 +13,11 @@ var Stack = function() {
 var stackMethods = {};
 
 
-var extend = function(to, from) {
-  for (var key in from) {
-    to[key] = from[key];
-  }
-};
+// var extend = function(to, from) {
+//   for (var key in from) {
+//     to[key] = from[key];
+//   }
+// };
 
 
 stackMethods.size = function() {
