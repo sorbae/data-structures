@@ -4,26 +4,24 @@ var Queue = function() {
   // Use an object with numeric keys to store values
   var storage = {};
   var count = 0;
-  var storageCount = 0;
-
+  var currentIndex = 0;
+  
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
     count++;
-    storageCount++;
-    someInstance[storageCount] = value;
+    storage[count] = value;
   };
 
   someInstance.dequeue = function() {
-    var countList = Object.keys(someInstance);
-    storage[countList[0]] = someInstance[countList[0]];
-    delete someInstance[countList[0]];
-    count--;
-    return storage[countList[0]];
+    var popBack = storage[currentIndex + 1];
+    delete storage[currentIndex + 1];
+    currentIndex++;
+    return popBack;
   };
 
   someInstance.size = function() {
-    return count < 0 ? 0 : count;
+    return Math.max(0, count - currentIndex);
   };
 
   return someInstance;
