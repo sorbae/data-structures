@@ -50,6 +50,8 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+  the overall time complexity of the above functions is O(n) because there's only a single for loop
+  inside of contains. The rest are time constant. :thumbsup:
  */
 
 var test = LinkedList();
