@@ -9,7 +9,6 @@ HashTable.prototype.insert = function(k, v) {
   let index = getIndexBelowMaxForKey(k, this._limit);
   let storage = this._storage;
   let inStorage = false;
-  debugger;
   let lePairs = [k, v];
   if (!storage.get(index)) {
     storage.set(index, []);

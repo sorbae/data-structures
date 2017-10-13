@@ -41,7 +41,3 @@ treeMethods.contains = function(target) {
   inside of contains.
  */
 
-var testTree = Tree('hello');
-testTree.addChild('there');
-testTree.children[0].addChild('go');
-testTree.contains('go');
