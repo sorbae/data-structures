@@ -59,5 +59,32 @@ describe('set', function() {
     
   });
   
-  // write test for duplicate arrays & objects
+  it('should add two deeply equal arrays', function() {
+    set.add([1, 'dog', true]);
+    expect(set.size()).to.equal(2);
+  });
+  it('should not add two strictly identical arrays', function() {
+    var testArray = [1, 'dog', true];
+    set.add(testArray);
+    expect(set.size()).to.equal(1);
+  });
+    
+  it('should be able to add functions', function() {
+    var a = function(x) { return x; };
+    var b = function(a, b, c) { a.push(b.concat(c)); };
+    set.add(a);
+    set.add(b);
+    set.add(Math.max);
+    expect(set.contains(a)).to.equal(true);
+    expect(set.contains(b)).to.equal(true);
+    expect(set.contains(Math.max)).to.equal(true);
+  });
+  
+  it('should be able to add arrays and objects', function() {
+    var a = { 'a': true, '1234': 'bob'};
+    var b = [4, 7, 'hello', false];
+    set.add(a);
+    set.add(b);
+    expect(set.contains(a)).to.equal(true);
+    expect(set.contains(b)).to.equal(true);
 });
