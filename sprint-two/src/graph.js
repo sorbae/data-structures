@@ -24,7 +24,7 @@ Graph.prototype.removeNode = function(node) {
 
   for (let nodeObj in this.vertices) {
     if (node in this.vertices[nodeObj].next) {
-      console.log(this.vertices);
+      // console.log(this.vertices);
       this.removeEdge(nodeObj, node);
     }
   }
@@ -70,12 +70,5 @@ Graph.prototype.forEachNode = function(cb) {
  * Complexity: What is the time complexity of the above functions?
  */
 
-var test = new Graph();
-// debugger
-test.addNode(4);
-test.addNode(5);
-test.addEdge(5, 4);
-(test.hasEdge(4, 5));
-// test.removeEdge(5, 4);
-// console.log(test.hasEdge(5, 4));
+
 
