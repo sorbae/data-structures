@@ -23,5 +23,15 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
-
+  
+  it('should handle non-string types', function() {
+    set.add(3);
+    expect(set.contains(3)).to.equal(true);
+    set.add([]);
+    expect(set.contains([])).to.equal(true);
+    set.add({});
+    expect(set.contains({})).to.equal(true);
+  })
+  
+  // write test for duplicate arrays & objects
 });
