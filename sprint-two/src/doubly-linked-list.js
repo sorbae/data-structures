@@ -38,20 +38,22 @@ let DoublyLinkedList = function() {
   list.removeTail = function() {
     let oldTail = list.tail;
     
-    list.tail.previous.next = null;
-    list.tail = list.tail.previous;
+    if (list.tail.previous !== null) {
+      list.tail.previous.next = null;
+      list.tail = oldTail.previous;
+    }
     
     return oldTail.value;
   };
 
   list.removeHead = function() {
-    // debugger;
     let currentHead = list.head;
     
-    list.head.next = currentHead.next;
-    list.head = currentHead.next;
-    list.head.previous = null;
-    
+    if (currentHead.next !== null) {
+      list.head = currentHead.next;
+      list.head.previous = null;
+    }
+
     return currentHead.value;
   };
 
