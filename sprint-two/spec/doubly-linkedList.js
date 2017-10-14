@@ -73,6 +73,4 @@ describe('Doubly LinkedList', function() {
     var newNode = Node('hello');
     expect(newNode.previous).to.equal(null);
   });
-
-  // add more tests here to test the functionality of linkedList
 });
