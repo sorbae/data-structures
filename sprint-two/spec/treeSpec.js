@@ -40,5 +40,12 @@ describe('tree', function() {
     expect(tree.contains(7)).to.equal(true);
     expect(tree.contains(8)).to.equal(true);
   });
+  
+  it('should have parent property', function() {
+    expect(tree.parent).to.equal(null);
+    tree.addChild(5);
+    tree.addChild(6);
+    expect(tree.parent)
+  });
 
 });
