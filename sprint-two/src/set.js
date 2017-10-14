@@ -7,7 +7,7 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  if (typeof item === 'object' && item) {
+  if (typeof item === 'object' && item && !this.contains(item)) {
     this._storage.push(item);
   } else {
     if (!this.contains(item)) {
@@ -24,6 +24,10 @@ setPrototype.remove = function(item) {
   if (this.contains(item)) {
     this._storage.splice(this._storage.indexOf(item), 1);
   }
+};
+
+setPrototype.size = function() {
+  return this._storage.length;
 };
 
 /*
